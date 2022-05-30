@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
 function Card({children, reverse}) {
-/* 
-This is a conditional class
+
+/*This is a conditional class
 return (
     <div className={`card ${reverse && 'reverse'}`}>{children}</div>
   )
-  */
 
+*/
   // this is a conditional style
     return ( 
     <div 
@@ -19,12 +19,13 @@ return (
         {children}
     </div>
     )
+
 }
 // ${} is a template string, inside is an if then statement,
 // if reverse is true, then return the class of reverse
 
 Card.defaultProps = {
-    reverse: true,
+    reverse: false,
 }
 
 Card.propTypes = {
