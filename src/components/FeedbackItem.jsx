@@ -5,7 +5,7 @@ import Card from './shared/Card'
 import FeedbackContext from '../context/FeedbackContext'
 
 function FeedbackItem({item}) {
-    const {deleteFeedback} = useContext(FeedbackContext)
+    const {deleteFeedback, editFeedback} = useContext(FeedbackContext)
 
 /*    const [rating, setRating] = useState(7)
     const [text, setText] = useState('This is an example of a feedback item')
@@ -19,7 +19,7 @@ function FeedbackItem({item}) {
             className='close'>
                 <FaTimes color='purple' />
             </button>
-            <button className='edit'>
+            <button onClick={() => editFeedback(item)} className='edit'>
                 <FaEdit color='purple' />
             </button>
 
