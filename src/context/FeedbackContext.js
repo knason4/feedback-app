@@ -22,19 +22,30 @@ export const FeedbackProvider = ({children}) => {
         }
             
     ])
+    //state
+    const [feedbackEdit, setFeedbackEdit] = useState({
+        item: {}, 
+        edit: false
+    })
+    //add feedback
     const addFeedback = (newFeedback) => {
         newFeedback.id = uuidv4()
         setFeedback([newFeedback, ...feedback])  //copy objects and put inside of the array. use ... which is spread operator.
     }
-
+    //delete feedback
     const deleteFeedback = (id) => {
         if(window.confirm('Are you sure you want to Delete?')){
             setFeedback(feedback.filter((item) => item.id !== id))
         }
       
     }
-    
-
+    //set item to be updated
+    const editFeedback = (item) => {
+        setFeedbackEdit({
+            item,
+            edit: true
+        })
+    }
     return <FeedbackContext.Provider value ={{
         feedback,
         deleteFeedback,
